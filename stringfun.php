@@ -1,5 +1,5 @@
 <form name="form" action="" method="post">
-    <lable for="">enter string</lable>
+    <lable for="">enter string here:-</lable>
     <input type="text" id="sub" name="input">
 </form>
 
@@ -17,4 +17,5 @@ echo "is_string function:- ". is_string($_POST['input'])."<br>";
 echo "ucfrist function:- ". ucfirst($_POST['input'])."<br>";
 echo "ucword function:- ". ucwords($_POST['input'])."<br>";
 echo "lcfrist function:- ". lcfirst($_POST['input'])."<br>";
+
 ?>
