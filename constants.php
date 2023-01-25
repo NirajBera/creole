@@ -29,9 +29,10 @@
 
 
 
-          //
+          //a simple value can change
           $a=20;
           $a=25;
+          //but constants are not change in bellow give error
           define("cons","This is php constanst");
 
     ?>
