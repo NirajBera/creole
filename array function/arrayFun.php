@@ -32,6 +32,14 @@
 
 <?php
 
+
+
+
+// $arr=['one','two','three'];
+// $arr_k=array_rand($arr);
+// echo $arr[$arr_k];
+
+
 if(isset($_POST['submit'])){
 
     $your_fun=$_POST['your_function'];
@@ -39,8 +47,39 @@ if(isset($_POST['submit'])){
     $arr1 = explode(",",$_POST['input']);
 
 
-    echo "you are select ".$your_fun." and your answer is:- ";
-    print_r($your_fun($arr1));
+
+
+    if($your_fun=='array_rand'){
+
+
+       $arr= $your_fun($arr1);
+       echo "you are select ".$your_fun." and your answer is:- ".$arr1[$arr];
+
+
+    }elseif($your_fun=='asort' or $your_fun=='arsort' or $your_fun=='shuffle' ){
+
+
+        echo "you are select ".$your_fun." and your answer is:- ";
+        $your_fun($arr1);
+        foreach($arr1 as $x){
+            echo "<br>";
+            echo $x;
+           
+        }
+
+
+    
+    }else{
+
+        echo "you are select ".$your_fun." and your answer is:- ";
+        print_r($your_fun($arr1));
+    }
+
+
+    // echo "you are select ".$your_fun." and your answer is:- ";
+    // print_r($your_fun($arr1));
+
+
 
 }
 
