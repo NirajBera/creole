@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Html Basic</title>
+
+    <style>
+        P {
+            text-align: center;
+            color: coral;
+            margin-top: 100px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 100px;
+            padding-top: 10PX;
+            padding-right: 10PX;
+            padding-bottom: 10px;
+            padding-left: 10px;
+
+
+
+        }
+
+        #p1:hover {
+            background-color: aquamarine;
+        }
+
+        #p1 {
+            font-size: large;
+            background-color: lavender;
+            border-radius: 10px;
+            border: 1px solid tomato;
+        }
+
+        .c1 {
+            text-align: center;
+            color: brown;
+            text-shadow: 1px 1px;
+        }
+
+        * {
+            text-align: center;
+            background-repeat: no-repeat;
+
+        }
+
+        #m2 {
+            display: none;
+        }
+
+        div.relative {
+            position: relative;
+            width: 400px;
+            height: 200px;
+            border: 3px solid #ad2126;
+        }
+
+        div.absolute {
+            position: absolute;
+            top: 80px;
+            right: 0;
+            width: 200px;
+            height: 100px;
+            border: 3px solid #ad2126;
+
+        }
+
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            padding: 5px;
+            background-color: #e6e8ca;
+            border: 2px solid #77af4c;
+        }
+
+        img {
+            float: right;
+        }
+
+        #bs1 {
+            width: 300px;
+            height: 100px;
+            padding: 15px;
+            background-color: rgb(80, 255, 229);
+            box-shadow: 10px 10px;
+        }
+
+        div.trn {
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+            transition: width 2s, height 4s;
+        }
+
+        .trn:hover {
+            width: 600px;
+            height: 600px;
+        }
+
+        div.trn1 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+            transition: width 2s, height 2s, transform 2s;
+        }
+
+        .trn1:hover {
+            width: 300px;
+            height: 300px;
+            transform: rotate(180deg);
+            transition-delay: 1s
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h3 class="c1">css basic</h3>
+        <div class="sticky">I am sticky!</div>
+        <br><br>
+        <p id="p1">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+            tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+            quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,
+            vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
+            qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        </p>
+
+        <p id="m2">
+            display none
+        </p>
+        <br><br>
+
+        <div id="bs1"> box-shadow</div>
+        <br><br>
+        <!--<img src="workplace.jpg" style="width:170px;height:170px;margin-left:15px;">
+        <div class="relative"> position:- relative
+            <div class="absolute"> position:- absolute</div>
+            <br><br>-->
+
+
+
+        <div class="trn"></div> <br><br>
+
+        <div class="trn1"></div>
+
+    </center>
+</body>
+
+</html>
