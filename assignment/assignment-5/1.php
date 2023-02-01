@@ -1,21 +1,20 @@
 <?php
-$color = array('white', 'green', 'red');
+                $color = array('white', 'green', 'red');
 
+                foreach($color as $value){
+                    echo $value;
+                    echo ",";
+                    
+                }
 
-
-// $arr=array_reverse($color);
-foreach($color as $x){
-    echo $x;
-    echo ",";
-    
-}
-echo "<br>";
-
-echo $color[1];
-echo "<br>";
-echo $color[2];
-echo "<br>";
-echo $color[0];
+                sort($color);
+                
+                echo "<ul>";
+                foreach ($color as $value1)
+                {
+                echo "<li>$value1</li>";
+                }
+                echo "</ul>";
 
 
 ?>

@@ -1,10 +1,9 @@
 <?php
-$i=5;
-$s=0;
-while($i <= 15){
-    $s=$s+$i;
-    $i++;
-}
-echo " sum 5 to 15 = $s ";
-
+        $loop=5;
+        $sum=0;
+        while($loop <= 15){
+            $sum=$sum+$loop;
+            $loop++;
+        }
+        echo " sum 5 to 15 = $sum ";
 ?>

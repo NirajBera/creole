@@ -1,10 +1,12 @@
 <?php
-    for($i = 1;$i <= 5;$i++){
-        echo "&nbsp";
-        for($j =$i; $j<= 5 ;$j++){
-             echo $j;
-        }
-        echo "<br>";
- 
-     }
+
+
+          for($loop=1; $loop<=4; $loop++)
+          {
+          for($InnerLoop=$loop; $InnerLoop>=1; $InnerLoop--)
+          echo $InnerLoop;
+          echo "<br>";
+          }
+
+
 ?>

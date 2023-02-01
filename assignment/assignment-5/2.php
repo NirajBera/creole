@@ -11,8 +11,8 @@
 
     asort($ceu);
 
-    foreach($ceu as $s => $k){
-        echo "$s = $k";
+    foreach($ceu as $key => $value){
+        echo "$key = $value";
         echo "<br>";
     }
 

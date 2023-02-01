@@ -1,8 +1,8 @@
 <?php
 
-            for($i = 1;$i <= 5;$i++){
+            for($loop = 1;$loop <= 5;$loop++){
                 echo "&nbsp";
-                for($j =1; $j<= $i ;$j++){
+                for($innerLoop =1; $innerLoop<= $loop ;$innerLoop++){
                     echo "*";
                 }
                 echo "<br>";

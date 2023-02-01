@@ -1,23 +1,17 @@
 <?php
-        $i=1;
+        $loop=1;
 
-        while($i <= 100){
+        while($loop <= 100){
 
-            if($i % 3 == 0){
+            if($loop % 3 == 0){
             }
             else{
-                if($i % 2 == 0){
-                    echo $i;
+                if($loop % 2 == 0){
+                    echo $loop;
                     echo "<br>";
                 }
 
             }
-
-            
-
-
-            $i++;
-        }
-
-       
+            $loop++;
+        } 
 ?>

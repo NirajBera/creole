@@ -11,15 +11,15 @@
 <?php
 
     if(isset($_POST['input'])){
-        $n=$_POST['input'];
-        $m=1;
+        $input=$_POST['input'];
+        $fact=1;
         
-        for($i=1;$i<=$n;$i++){
-            $m=$m*$i;
+        for($loop=1;$loop<=$input;$loop++){
+            $fact=$fact*$input;
          
             
         }
-        echo "factorial = $m";
+        echo "factorial = $fact";
         
     }
 

@@ -1,13 +1,13 @@
 <?php
-$i=1;   
-while($i <= 10){
-    if($i % 2 == 0){
-        echo "Skipping number $i because it is even.";
+$loop=1;   
+while($loop <= 10){
+    if($loop % 2 == 0){
+        echo "Skipping number $loop because it is even.";
     }else{
-        echo "Executing - counter is $i .";
+        echo "Executing - counter is $loop .";
     }
     echo "<br>";
-    $i++;
+    $loop++;
 }
 
 ?>

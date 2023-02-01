@@ -1,12 +1,10 @@
 <?php
     $myArray = array(87,75,93,95);
-    $s=0;
-    foreach($myArray as $x){
-        $s=$s+$x;
+    $sum=0;
+    foreach($myArray as $key){
+        $sum=$sum+$key;
     
     }
 
-    echo " sum of array = $s";
-
-
+    echo " sum of array = $sum";
 ?>

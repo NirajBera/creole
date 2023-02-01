@@ -1,22 +1,19 @@
 <?php
+            for($loop = 1;$loop <= 4;$loop++){
+                echo "&nbsp";
+                for($innerLoop =1; $innerLoop<= $loop ;$innerLoop++){
+                    echo "*";
+                }
+                echo "<br>";
 
+            }
 
+            for($loop = 1;$loop <= 4;$loop++){
+                echo "&nbsp";
+                for($innerLoop =$loop; $innerLoop<= 4 ;$innerLoop++){
+                    echo "*";
+                }
+                echo "<br>";
 
-
-for($i = 1;$i <= 4;$i++){
-    echo "&nbsp";
-    for($j =1; $j<= $i ;$j++){
-        echo "*";
-    }
-    echo "<br>";
-
-}
-   for($i = 1;$i <= 4;$i++){
-    echo "&nbsp";
-    for($j =$i; $j<= 4 ;$j++){
-         echo "*";
-    }
-    echo "<br>";
-
-    }
+                }
 ?>

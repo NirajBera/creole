@@ -1,13 +1,10 @@
 <?php
-$i=1;
+        $loop=1;
 
-while($i <= 10){
-    
-    echo "The product of 10 x $i is ", 10 * $i;
-    echo "<br>";
-    $i++;
-}
-
-
-
+        while($loop <= 10){
+            
+            echo "The product of 10 x $loop is ", 10 * $loop;
+            echo "<br>";
+            $loop++;
+        }
 ?>

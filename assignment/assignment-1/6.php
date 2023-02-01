@@ -1,7 +1,7 @@
 <?php
 
-    for($i=0;$i <= 100;$i += 10){
-        echo $i;
+    for($loop=0;$loop <= 100;$loop += 10){
+        echo $loop;
         echo "<br>";
     }
 

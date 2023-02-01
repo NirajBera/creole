@@ -1,13 +1,13 @@
 <?php
 
 
-        $n=1;
-        while($n <= 100){
-            if($n % 2 == 0){
-                echo $n;
-                echo "&nbsp; ,";
+        $number=1;
+        while($number <= 100){
+            if($number % 2 == 0){
+                echo $number;
+                echo "&nbsp;, ";
             }
-            $n++;
+            $number++;
         }
 
 

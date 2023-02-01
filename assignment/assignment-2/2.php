@@ -1,11 +1,8 @@
 <?php
-        $s=0;
-        for($i=0;$i<=30;$i++){
-            $s=$s+$i;
+        $sum=0;
+        for($loop=0;$loop<=30;$loop++){
+            $sum=$sum+$loop;
         }
 
-        echo "tatal of 0 to 30 = $s";
-
-
-
+        echo "tatal of 0 to 30 = $sum";
 ?>

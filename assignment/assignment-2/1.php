@@ -1,10 +1,9 @@
 <?php
-for($i=1;$i<=10;$i++){
-    echo $i;
-    if($i==10){
-        break;
-    }
-    echo "-";
-}
-
+        for($loop=1;$loop<=10;$loop++){
+            echo $loop;
+            if($loop==10){
+                break;
+            }
+            echo "-";
+        }
 ?>

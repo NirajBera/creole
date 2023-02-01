@@ -4,8 +4,8 @@
 
     $arr_len=count($arr_variable);
 
-    for($i=0;$i<$arr_len;$i++){
-        echo "The emement [$i] : ",$arr_variable[$i];
+    for($loop=0;$loop<$arr_len;$loop++){
+        echo "The emement [$loop] : ",$arr_variable[$loop];
         echo "<br>";
         }
 
