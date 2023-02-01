@@ -7,10 +7,17 @@
    echo "<br>";
 
    echo "max 7 value:-";
+   echo "<br>";
    asort($arr);
    for($loop=1;$loop<=7;$loop++){
     echo $arr[$loop];
     echo "<br>";
+   }
+   echo "<br>";
+   for($loop1=$len-7;$loop1<=7;$loop1--){
+      echo 1;
+      echo $arr[$loop];
+      echo "<br>";
    }
 
 ?>
