@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Traversing</title>
+    <script src='jquery-3.6.3.js'></script>
+    <script src="traversingmain.js"></script>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 2px solid lightgray;
+            color: black;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Traversing Ancestors</h1>
+    <br>
+    <h3>parent</h3>
+    <br>
+
+
+    <div class="ancestors">
+        <div style="width:500px;">div (great-grandparent)
+            <ul>ul (grandparent)
+                <li>li (direct parent)
+                    <span id="span1">span</span>
+                </li>
+            </ul>
+        </div>
+
+        <div style="width:500px;">div (grandparent)
+            <p>p (direct parent)
+                <span id="span2">span</span>
+            </p>
+        </div>
+    </div>
+
+
+    <button id="btn1">Click me to find Parent- first span</button>
+    <button id="btn2">Click me to find Parent- second span</button><br><br>
+
+
+    <hr>
+    <h3>parents</h3><br>
+    <div class="ancestors">
+        <div style="width:500px;">div (great-grandparent)
+            <ul>ul (grandparent)
+                <li>li (direct parent)
+                    <span id="span3">span</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <button id="btn3">click me to find all parents of span</button>
+    <button id="btn4">click me to find div parent of span</button><br><br>
+
+    <hr>
+    <h3>parentsUntil</h3><br>
+
+    <div class="ancestors">
+        <div id="div1" style="width:500px;">div (great-grandparent)
+            <ul>ul (grandparent)
+                <li>li (direct parent)
+                    <span id="span4">span</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <button id="btn5">Find parents between span and div</button>
+
+
+    <br>
+
+    <!--descendants-->
+    <hr>
+    <h1>Descendants in jQuery</h1>
+    <h3>Children</h3>
+
+
+    <div class="descendants">
+        <div style="width:500px;" class="div2">div (current-element)
+            <ul>ul (child)
+                <li>li (grand-child)
+                    <span id="span5">span (great-grandchild)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div style="width:500px;" class="div2">div (current-element)
+            <p class="p1">p (child)
+                <span id="span6">span (grand-child)</span>
+            </p>
+        </div>
+    </div>
+
+    <button id="btn6">click me to find child of div</button><br>
+    <p>This will return all paragraph that are first child of div</p>
+    <button id="btn7">click me to find all first paragraph of div</button>
+    <br><br><br>
+
+
+    <hr>
+
+    <h3>Find method</h3>
+
+
+    <div class="descendants">
+        <div style="width:500px;" class="div3">div (current-element)
+            <ul>ul (child)
+                <li>li (grand-child)
+                    <span class="span7">span (great-grandchild)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div style="width:500px;" class="div3">div (current-element)
+            <p class="p2">p (child)
+                <span class="span7">span (grand-child)</span>
+            </p>
+        </div>
+    </div>
+    <p>This will return all Span that are descendants of div</p>
+    <button id="btn8">click here</button>
+    <button id="btn9">click me to show all descendants of div</button>
+
+
+    <br>
+    <hr>
+    <!--filtring-->
+
+    <h1>Filtering</h1>
+    <h3>First / Last</h3>
+
+  
+    <div class="div8">parent div
+        <p class="p3">paragraph tag</p>
+        <span>span tag</span>
+        <h3 class="h">h3 tag</h3>
+        <p class="p3">paragraph Tag</p>
+        <a href="#">anchor Tag</a>
+        <h3 class="h">h3 tag</h3>
+    </div>
+
+    <button id="btn10">click me to find first paragraph </button>
+    <button id="btn11">click me to find first h3 tag</button>
+    <button id="btn12">click me to find last h3 tag</button>
+    <hr>
+
+    <h3>Filter Method</h3>
+
+
+    <div class="parent">
+
+        <p>This is a paragraph</p>
+        <p class="p5">This is another paragraph.</p>
+        <p>This is a paragraph2</p>
+        <p class="p5">This is another paragraph2.</p>
+
+    </div>
+    <button id="btn13">click me to filter out paragraph that has paragraph class</button><br><br>
+
+
+    <hr>
+
+    <h3>not method</h3>
+    <br>
+
+
+
+    <div class="parent">
+        <p>This is a paragraph</p>
+        <p class="p6">This is another paragraph.</p>
+        <p>This is a paragraph2</p>
+        <p class="p6">This is another paragraph2.</p>
+    </div>
+
+    <button id="btn14">click me to filter out paragraph that not have class</button>
+
+
+    <!--siblings-->
+    <hr>
+    <h1>Siblings Method</h1><br>
+    <br>
+    <h3>siblings</h3>
+
+    <div class="div4">parent div
+        <p id="p7">paragraph tag</p>
+        <span>span Tag</span>
+        <h3>h3 tag</h3>
+        <a href="#">anchor tag</a>
+        <h3>h3 tag</h3>
+    </div>
+
+    <button id="btn15">click me to find all siblings of paragraph tag</button>
+    <button id="btn16">click me to find all h3 that are siblings of paragraph</button>
+    <br><br>
+
+    <hr>
+    <h3>next Method</h3>
+    <br><br>
+
+    <div class="div5">parent div
+        <p id="p8">paragraph tag</p>
+        <span>span tag</span>
+        <h3>h3 tag</h3>
+        <a href="#">anchor tag</a>
+        <h3>h3 tag</h3>
+    </div>
+
+    <button id="btn17">click me to find next of paragraph tag</button>
+    <button id="btn18">click me to find next of div tag</button>
+    <br><br>
+
+
+    <hr>
+    <h3>nextAll Method</h3>
+    <br><br>
+    <div class="div6">parent div
+        <p id="p9">paragraph Tag</p>
+        <span>span Tag</span>
+        <h3>h3 tag</h3>
+        <a href="#">anchor tag</a>
+        <h3>h3 tag</h3>
+    </div>
+
+    <button id="btn19">click me to find next all of Paragraph</button><br><br>
+
+    <hr>
+    <h3>nextUntil Method</h3>
+    <br>
+    <div class="div7">parent div
+        <p id="p10">paragraph tag</p>
+        <span>span tag</span>
+        <h3>h3 tag</h3>
+        <a href="#">anchor tag</a>
+        <h3>h3 tag</h3>
+    </div>
+
+
+    <button id="btn20">click me to next until a tag</button><br><br><br>
+
+
+</body>
+
+</html>

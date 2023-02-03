@@ -7,7 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery Html</title>
     <script src='jquery-3.6.3.js'></script>
-    <script src='main.js'></script>
+    <script src='htmlmain.js'></script>
+    <style>
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+
+        .blue {
+            color: rgb(89, 197, 233);
+        }
+        #div2 {
+            height: 110px;
+            width: 200px;
+            padding: 10px;
+            margin: 3px;
+            border: 1px solid rgb(47, 49, 52);
+            background-color: rgb(123, 189, 211);
+          }
+    </style>
+
 </head>
 
 <body>
@@ -35,6 +54,102 @@
     <button id="btn5">Set HTML()</button>
 
     <button id="btn6">For Val()</button>
+    <br><br>
+
+    <h3>Set Attributes </h3>
+    <p><a href="https://jquery.com/" id="href1">jQuery.com</a></p>
+    <br><br>
+
+    <button id="btn7">Change href Value</button>
+    <br><br>
+    <hr>
+
+    <h3>jQuery Append</h3>
+    <br>
+    <p class="append1">This is a paragraph.</p>
+    <p class="append1">This is another paragraph.</p>
+
+    <ol id="ol1">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+    <button id="btn8">Click me to append the text</button>
+    <button id="btn9">Click me to append list items</button>
+
+    <hr>
+    <h3>jQuery Prepended</h3>
+    <br>
+    <p class="Prepended1">This is a paragraph.</p>
+    <p class="Prepended1">This is another paragraph.</p>
+
+    <ol id="ol2">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+    <button id="btn10">Click me to prepended the text</button>
+    <button id="btn11">Click me to prepended list items</button>
+
+    <br>
+    <hr>
+    <h3>jQuery After and Before</h3>
+    <br>
+    <ol id="ol3">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+    <br>
+    <button id="btn12">Click me to insert before</button>
+    <button id="btn13">Click me to insert after</button>
+
+    <br><br>
+    <hr>
+    <h3>Remove Elements</h3>
+
+    <h3>jQuery remove</h3>
+    <br>
+
+    <p class="p2">This is a paragraph.</p>
+    <p class="p2">This is another paragraph.</p>
+
+    <button id="btn14">Remove paragraph</button>
+
+    <br><br>
+    <hr>
+    <h3>Get and Set CSS Classes</h3>
+    <br>
+    <h3>jQuery addClass and removeClass</h3>
+    <br>
+    <p class="p3">This is a paragraph.</p>
+    <p class="p3">This is another paragraph.</p>
+    <br>
+    <button id="btn15">Click me to Add class</button>
+    <button id="btn16">Click me to Remove class</button>
+    <button id="btn17">Click me to Toggle class</button>
+    <br>
+    <hr>
+    <h3>Set a CSS Property</h3>
+    <br>
+    <p class="p4">This is a paragraph.</p>
+    <p class="p4">This is another paragraph.</p>
+    <p class="p4">This is secound another paragraph.</p>
+    <br>
+    <button id="btn18">Click me to Set multiple styles</button>
+
+    <br>
+    <h3></h3>
+    <br>
+    <div id="div2"></div>
+    <br><br>
+    <button id="btn19">Click me to show Display dimensions of div</button>
+
+
+
+
+
+
 
 </body>
 
