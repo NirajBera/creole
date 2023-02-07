@@ -6,24 +6,30 @@
     echo "<center><table border =1>
             <tr>
                 <th>id</th>
-                <th>Uname</th>
-                <th>Unumber</th>
-                <th>Uemail</th>
-                <th>Ugender</th>
-                <th>Uaddress</th>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Delete</th>
             <tr>";
 
     if(mysqli_num_rows($res) > 0){
 
         while($row = mysqli_fetch_assoc($res)){
-            echo "<tr>
-                    <td>". $row['id'] ."</td>
-                    <td>". $row['uname'] ."</td>
-                    <td>" . $row['unumber'] ."</td>
-                    <td>" . $row['uemail'] . "</td>
-                    <td>" . $row['ugender'] . "</td>
-                    <td>" . $row['uaddr'] . "</td>
-                </tr>";
+?>            
+            <tr>
+                    <td><?php echo  $row['id']; ?> </td>
+                    <td><?php echo  $row['uname']; ?> </td>
+                    <td><?php echo  $row['unumber']; ?> </td>
+                    <td><?php echo  $row['uemail']; ?> </td>
+                    <td><?php echo  $row['ugender']; ?> </td>
+                    <td><?php echo  $row['uaddr']; ?> </td>
+                    <td><a href="delete1.php?id=<?php echo $row['id']; ?>">Delete</a></td>
+
+
+                </tr>
+<?php                
         }
 
         echo "</table></center>";

@@ -15,10 +15,14 @@
 <?php
         require 'connect.php';
 
-        $sql="create table user_info(id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        fname VARCHAR(30) NOT NULL,
-        lname VARCHAR(30) NOT NULL,
-        email VARCHAR(50))";
+        // $sql="create table user_info(id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        // fname VARCHAR(30) NOT NULL,
+        // lname VARCHAR(30) NOT NULL,
+        // email VARCHAR(50))";
+        $sql="create table designation(did INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        id int(6),
+        desig VARCHAR(30) NOT NULL,
+        FOREIGN KEY (id) REFERENCES emp(id))";
 
         if(mysqli_query($conn,$sql)){
             echo "table created successfully";
