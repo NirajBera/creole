@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src='jquery-3.6.3.js'></script>
+    <script src='jquery.validate.min.js'></script>
+    <style>
+        label.error {
+
+            color: red;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <center>
+        <form class="cmxform" id="vForm" method="get" action="">
+
+            <table border="1" style="border: ridge 5px;">
+                <tr>
+                    <th colspan="2">
+                        <h3>User form with validation</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <td> <label for="name">Name (required, at least 2 characters)</label></td>
+                    <td> <input id="name" name="name" type="text" required class="error"></td>
+                </tr>
+
+                <tr>
+                    <td> <label for="email">E-Mail</label></td>
+                    <td> <input id="email" type="email" name="email" class="error" required></td>
+                </tr>
+
+                <tr>
+                    <td> <label for="cphone">Phone (required)</label></td>
+                    <td> <input id="phone" type="number" name="phone" maxlength="10" minlength="10" required
+                            class="error"></td>
+                </tr>
+
+
+                <tr>
+                    <td> <label for="curl">URL (optional)</label></td>
+                    <td> <input id="curl" type="url" name="url" class="error"></td>
+                </tr>
+
+                <tr>
+                    <td> <label for="password">Enter password(required)</label></td>
+                    <td> <input id="ppassword" type="password" name="password" required class="error"></td>
+                </tr>
+                <tr>
+                    <td>User Gender :- </td>
+                    <td>
+                        <input type="radio" id="gender" name="gender" value="Male">
+                        <label for="Male">Male</label>
+                        <input type="radio" id="gender" name="gender" value="Female">
+                        <label for="Female">Female</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <center><input class="submit" type="submit" value="Submit"></center>
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+    </center>
+    <script>
+        //$("#commentForm").validate();
+
+        $("#vForm").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: "reqired",
+                name: {
+                    required: true,
+                    minlength: 4
+                    
+                },
+                password: {
+                    required: true
+
+                },
+                gender:{
+                    onclick: false
+                }
+
+
+            },
+            messages: {
+                email: {
+                    required: "enter your email here",
+                    email: "you enter this for mate abc@gmail.com"
+                },
+                phone: {
+                    required: "enter your 10 digit number",
+                    minlength: jQuery.validator.format("10 digit must required"),
+                    maxlength: jQuery.validator.format("enter max 10 digit only")
+                },
+                name: {
+                    required: "enter 4 digit frist",
+                    minlength: jQuery.validator.format("min 4 digit must required")
+
+                },
+                password: {
+                    required: "password is required"
+                }
+
+
+
+            },
+            // onsubmit: false
+            //qonfocusout: true
+            onkeyup: false,
+            //onclick: false
+        });
+    </script>
+</body>
+
+</html>

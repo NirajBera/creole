@@ -93,4 +93,18 @@ $(document).ready(function () {
                     $("#div2").html(txt);
                   });
 
+
+                  ///chining
+                  $(document).ready(function(){
+                    $("button").click(function(){
+                      $("#p1").css("color", "red")
+                        .slideUp(2000)
+                        .slideDown(2000);
+                    });
+                  });
+                  //remove
+                  $("button").click(function(){
+                    $("p").remove();
+                  });
+
   });
