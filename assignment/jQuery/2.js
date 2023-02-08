@@ -1,7 +1,14 @@
 $(document).ready(function () {
    
-    $("#btn1").click(function(){
-        $("#input").limit(10);
-        });
+    $("#input").keydown(function(){
+        var val = $ ("#input").val();
+        var len = val.length
+        var rem = 10-length
+        if(rem <= 0){
+            $("#p1").append().text("10 latter")
+        }else{
+            $("#sp1").append().text(rem)
+        }
+    })
 
 });
