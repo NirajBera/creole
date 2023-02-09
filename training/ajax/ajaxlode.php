@@ -14,6 +14,7 @@ $(document).ready(function(){
 
 <div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
 
+
 <button id="btn1">Get External Content</button>
 
 </body>

@@ -5,7 +5,8 @@
 <script>
 function showUser(str) {
   if (str=="") {
-    document.getElementById("txtHint").innerHTML="";
+    document.getElementById("txtHint").innerHTML="";  
+    
     return;
   }
   var xmlhttp=new XMLHttpRequest();

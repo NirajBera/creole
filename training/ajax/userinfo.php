@@ -17,6 +17,7 @@
 
    
     $sql = "SELECT * FROM test WHERE id =  $q ";
+    
     $result = mysqli_query($con, $sql);
 
     echo "<table>
