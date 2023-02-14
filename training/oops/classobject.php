@@ -1,6 +1,6 @@
 <?php
 
-    class car{
+    class Car{
         // Properties
         public $name;
         public $color;
@@ -21,7 +21,7 @@
     }
 
     //object
-    $kia = new car();
+    $kia = new Car('kia','red');
 
     $kia->set_info('kia','red');
     echo "Name :- ".$kia->get_name();
@@ -30,5 +30,5 @@
 
     //instanceof
     echo "<br>";
-    var_dump($kia instanceof car);
+    var_dump($kia instanceof Car);
 ?>

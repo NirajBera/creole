@@ -1,6 +1,6 @@
 <?php
 
-    class car1{
+    class Car1{
         // Properties
         public $name;
         public $color;
@@ -21,7 +21,7 @@
     }
 
 
-    $kia = new car1('kia','red');
+    $kia = new Car1('kia','red');
     echo "Name :- ".$kia->get_name();
     echo "<br>";
     echo "color :- ".$kia->get_color();

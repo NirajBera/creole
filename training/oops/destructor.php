@@ -1,6 +1,6 @@
 <?php
 
-    class car1{
+    class Car1{
         // Properties
         public $name;
         public $color;
@@ -20,7 +20,7 @@
     }
 
 
-    $kia = new car1('kia','red');
+    $kia = new Car1('kia','red');
     
 
 ?>
