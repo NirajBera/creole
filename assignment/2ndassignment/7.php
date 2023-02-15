@@ -1,12 +1,10 @@
 <?php
 
 function Short($string, $order){
-    $length = strlen($string);
-    $array = [];
+    
+   
 
-    for($inner = 0; $inner < $length; $inner++){
-        $push = array_push($array, $string[$inner]);
-    }
+    $array = str_split($string);
 
     
     if($order == false){
