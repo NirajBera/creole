@@ -1,6 +1,4 @@
 <?php
-
-
     function def($name){
         $trim = trim($name);
         $array = explode("-",$trim);
@@ -9,8 +7,5 @@
 
     $name='"The unexamined life is not worth living." - Socrates';
     def($name);
-
-
-
 
 ?>
