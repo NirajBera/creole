@@ -1,39 +1,19 @@
-<html>
-    <body>
-        <form action="" method="post">
-            <lable>Enter a number :- </lable>
-            <input type="txt" name="input">
-           
-            <br><br>
-            <button type ="submit" name="submit"> submit</button>
-        </form>  
-    </body>  
-</html>
-
-
-
 <?php
 
-    if(isset($_POST['submit'])){
-        
-        $input = $_POST['input'];
-        trim($input," ");
-        
-        $len=strlen($input);
-    
-        //echo $len;
+$string = "I am a string";
 
-        for($inner=0;$inner<=$len;$inner++){
-            if($inner % 2 == 0){
-                echo "a";
-                ucwords($input[$inner]);
-            }
+$length = strlen($string);
+
+for ($inner = 0 ; $inner < $length ; $inner++){
+    
+    if($inner%2==0){
+            echo ucfirst($string[$inner]);
 
         }
-       echo $input;
-            
-       
+        
+    else{
+        echo $string[$inner];
     }
-   
+}
 
 ?>

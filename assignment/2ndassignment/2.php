@@ -1,26 +1,19 @@
 <?php
 
-    function rem($str,$a,$b){
-        $len = strlen($str);
+$string = "I am an example string";
 
-        for($inner = 0;$inner<=$len;$inner++){
+$length = strlen($string);
 
-            if($a == $str[$inner]){
-                rtrim($str,$a);
-            }
-
-            if($b==$str[$inner]){
-                rtrim($str,$b);
-            }
-            
-        }
-
-        echo $str;
-
-    }
+for($inner=0; $inner < $length; $inner++){
     
 
-    rem('I am an example string','a','x');
-
+    if($string[$inner] == "a" || $string[$inner] == "x"){
+    
+    continue;
+    }
+    else{
+        echo $string[$inner];
+    }
+}
 
 ?>

@@ -19,13 +19,11 @@
         $input = $_POST['input'];
         $input2 = $_POST['input2'];
 
-        $word=strcmp($input,$input2);
-        //echo $len;
-
-        
-       
-            echo $word;
-       
+        if($word=strstr($input,$input2)){
+            echo "true";
+        }else{
+            echo "false";
+        } 
     }
    
 
