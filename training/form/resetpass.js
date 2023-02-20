@@ -1,15 +1,8 @@
 $(document).ready(function () {
-    $("#btn1").click(function(){
-        location.href('/singup.php');
-    });
-
     
     $("#vForm").validate({
         rules: {
-            email: {
-                required: true,
-                email: true
-            },
+           
             password: {
                 required: true
 
@@ -18,10 +11,7 @@ $(document).ready(function () {
 
         },
         messages: {
-            email: {
-                required: "enter your email here",
-                email: "you enter this for mate abc@gmail.com"
-            },
+            
             password: {
                 required: "password is required"
             }
@@ -34,28 +24,23 @@ $(document).ready(function () {
             console.log("cilxked");
 
             
-            let em = $("#email").val();
-            let ps = $("#password").val();
-            let rm = $("#remember").val();
-            if($("#remember").is(":checked")){
-                mydata = {email:em,password:ps,remember:rm};
-            }else{
-                let rm = "none";
-                mydata = {email:em,password:ps,remember:rm};
-            }
-
             
+            let ps = $("#password").val();
+            
+            mydata = {password:ps};
             //console.log(mydata);
             $.ajax({
-                url:"checklogin.php",
+                url:"upadtepass.php",
                 method :"POST",
                 data : JSON.stringify(mydata),
                 success: function (data){
                     let t = (data.split("</html>")[1].trim());
+                    
                     console.log(t);
+                   
                     if(t == 1){
 
-                        window.location ='welcome.php';
+                        window.location ='login.php';
                        
                     }
                     else{
@@ -71,6 +56,5 @@ $(document).ready(function () {
         
     });
 
-   
 
 });    

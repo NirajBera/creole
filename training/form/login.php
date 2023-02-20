@@ -15,6 +15,14 @@
 
     
     <style>
+        #a1{
+            text-decoration: none;
+            color: white;
+        }
+        #a1:hover{
+            text-decoration: none;
+            color: white;
+        }
         label.error {
 
             color: red;
@@ -30,7 +38,7 @@
                 <a class="navbar-brand"><b>CRUD</b></a>
                 <form class="d-flex">
                     
-                    <button id="btn1" class="btn btn-primary rounded-3">sing up</button>
+                    <button id="btn1" class="btn btn-primary rounded-3"><a href="singup.php" id="a1">sign up</a></button>
                     
                 </form>
             </div>
@@ -45,21 +53,27 @@
 
             <div class="mb-3">
                 <label for="email" class="col-sm-2 col-form-label">E-Mail</label>
-                <input id="email" class="form-control" name="email" type="email"  class="error" required>
+                <input id="email" class="form-control" name="email" type="email" value="<?php if(isset($_COOKIE["email"])) { echo $_COOKIE["email"]; } ?>" class="error" required>
                 
             </div>
 
             <div class=" mb-3">
                 <label for="password" class="col-sm-2 col-form-label">password</label>
-                <input id="password" class="form-control" type="password" name="password" required class="error">
+                <input id="password" class="form-control" type="password" name="password" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>" required class="error">
                 
             </div>
 
             <div class="mb-3">
                 <center><input class="submit,btn btn-primary rounded-3" id="submit" type="submit" name="submit" value="submit"></center>
             </div>
+            <div class=" mb-3">
+                <input id="remember" type="checkbox" name="remember">
+                <label for="remember" class="col-sm-2 col-form-label">Remember Me</label>   
+            </div>
 
             <p id="p1"></p>
+
+            <a href="forgot.php" >Forgot Password</a>
 
         </form>
     </center>

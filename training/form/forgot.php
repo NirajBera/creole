@@ -15,10 +15,33 @@
 
     
     <style>
+        #a1{
+            text-decoration: none;
+            color: white;
+        }
+        #a1:hover{
+            text-decoration: none;
+            color: white;
+        }
         label.error {
 
             color: red;
         }
+
+        .loader {
+            border: 5px solid #f3f3f3; 
+            border-top: 5px solid black; 
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            display: none ;
+            }
+
+            @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+            }
     </style>
 </head>
 
@@ -30,7 +53,7 @@
                 <a class="navbar-brand"><b>CRUD</b></a>
                 <form class="d-flex">
                     
-                    <button id="btn1" class="btn btn-primary rounded-3">Login up</button>
+                    <button id="btn1" class="btn btn-primary rounded-3 btn1"><a href ="login.php" id="a1">Log in</a></button>
                     
                 </form>
             </div>
@@ -54,7 +77,10 @@
             </div>
 
             <p id="p1"></p>
-
+            <center>
+            <div class="loader"></div>
+            <p id="p1"></p>
+            </center>
         </form>
     </center>
 

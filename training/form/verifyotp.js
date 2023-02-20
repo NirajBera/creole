@@ -1,49 +1,40 @@
-
 $(document).ready(function () {
-
-    $('#btn1').click(function(){
-        window.location ='login.php';
-    })
     
     $("#vForm").validate({
         rules: {
-            email: {
+            otp: {
                 required: true,
-                email: true
+                
             },
         },
         messages: {
-            email: {
-                required: "enter your email here",
-                email: "you enter this for mate abc@gmail.com"
+            otp: {
+                required: "otp is required",
+                
             },
 
         },
 
         submitHandler:function(form){
             console.log("cilxked");
-            let em = $("#email").val();
-            mydata = {email:em};
+            let o = $("#otp").val();
+            mydata = {otp:o};
             //console.log(mydata);
             $.ajax({
-                url:"sendotp.php",
+                url:"checkotp.php",
                 method :"POST",
                 data : JSON.stringify(mydata),
-                beforeSend:function(){
-                    $(".loader").show();
-                    $("#p1").html("please wait...");
-                    },
                 success: function (data){
                     let t = (data.split("</html>")[1].trim());
-
+                    console.log(t);
                     if(t == 1){
 
-                        window.location ='verifyotp.php';
+                        window.location ='resetpass.php';
                        
                     }
                     else{
                         
-                        $(".loader").hide();
+                        
                         $("#p1").html("<b>"+data+"</b>");
                     }
                     
