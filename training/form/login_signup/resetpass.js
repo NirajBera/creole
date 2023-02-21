@@ -30,7 +30,7 @@ $(document).ready(function () {
             mydata = {password:ps};
             //console.log(mydata);
             $.ajax({
-                url:"upadtepass.php",
+                url:'changpass.php',
                 method :"POST",
                 data : JSON.stringify(mydata),
                 success: function (data){

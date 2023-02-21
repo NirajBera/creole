@@ -12,7 +12,7 @@
     <script src='jquery-3.6.3.js'></script>
     <script src='jquery.validate.min.js'></script>
     <script src='checklogin.js'></script>
-
+    
     
     <style>
         #a1{
@@ -28,6 +28,7 @@
             color: red;
         }
     </style>
+    
 </head>
 
 <body>

@@ -1,7 +1,8 @@
 $(document).ready(function () {
-    $("#btn1").click(function(){
-        location.href('/singup.php');
-    });
+    
+    // $("#btn1").click(function(){
+    //     location.href('/singup.php');
+    // });
 
     
     $("#vForm").validate({
@@ -52,10 +53,10 @@ $(document).ready(function () {
                 data : JSON.stringify(mydata),
                 success: function (data){
                     let t = (data.split("</html>")[1].trim());
-                    console.log(t);
+                    
                     if(t == 1){
 
-                        window.location ='welcome.php';
+                        window.location ='../curd/welcome.php';
                        
                     }
                     else{

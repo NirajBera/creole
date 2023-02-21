@@ -11,8 +11,8 @@
     $remember=$mydata['remember'];
 
     if($remember != "none"){
-        setcookie ("email",$email,time()+ 360000);
-        setcookie ("password",$password,time()+ 360000);
+        setcookie ("email",$email,time()+ 360000,"/");
+        setcookie ("password",$password,time()+ 360000,"/");
     }
         $_SESSION['email']=$email;
     
