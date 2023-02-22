@@ -42,6 +42,7 @@ $res=mysqli_query($conn,$sql);
             <div class="container-fluid">
                 <a class="navbar-brand"><b>CRUD</b></a>
                 <form class="d-flex">
+                    <button id="btn1" class="btn btn-primary rounded-3 "><a href="../create/create.php" id="a1">Sign Out</a></button>&nbsp;
 
                     <button id="btn1" class="btn btn-primary rounded-3 "><a href="../login_signup/logout.php" id="a1">Sign Out</a></button>
 
@@ -51,7 +52,7 @@ $res=mysqli_query($conn,$sql);
         <br>
         <h1>User List</h1>
         
-        <table class="table table-striped table-hover container table table-bordered ">
+        <table class="table table-striped table-hover container table table-bordered">
             <thead>
                 <tr>
                     <th scope="col">Id</th>
@@ -76,9 +77,10 @@ $res=mysqli_query($conn,$sql);
                             <td style ="padding-top:27px;">'.$row["name"].'</td>
                             <td style ="padding-top:27px;">'.$row["email"].'</td>
                             <td style ="padding-top:27px;">'.$row["gender"].'</td>
-                            <td style ="padding-top:27px;">'.$row["number"].'</td>
-                            <td> <img class="img" height="40" width="40" src="data:image/jpeg;base64,'.base64_encode( $row['img'] ).'"/> </td>
-                            <td style ="padding-top:27px;">'.$row["address"].'</td> '?>
+                            <td style ="padding-top:27px;">'.$row["number"].'</td>'?>
+                            <td> <img width="50px" height="50px" src="../image/<?php echo $row['img']; ?>"> </td>
+                            <?php 
+                            echo '<td style ="padding-top:27px;">'.$row["address"].'</td> '?>
 
                            
                             <td><center><a href="update1.php?id=<?php echo $row["id"]; ?>" id="a1"><button class="btn btn-primary">Update</button> </a>&nbsp;
