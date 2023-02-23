@@ -32,16 +32,108 @@
 </head>
 
 <body>
+
+    <?php
+
+
+
+    // $name = $email = $phone = $url = $image = $gender = "";
+    // $nameErr = $emailErr = $phoneErr = $urlErr = $imageErr = $genderErr = "";
+
+    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    //     if (empty($_POST["name"])) {
+    //         $nameErr = "this field is required please enter name";
+    //     } else {
+
+    //         if (!preg_match("/^[a-zA-Z-']*$/", $name = $_POST["name"])) {
+    //             $nameErr = "Only letters allowed";
+    //             $name = "";
+    //         } else {
+    //             $name = test_input($_POST["name"]);
+    //         }
+    //     }
+
+    //     if (empty($_POST["email"])) {
+    //         $emailErr = "this field is required please enter email";
+    //     } else {
+    //         if (!filter_var($email = $_POST["email"], FILTER_VALIDATE_EMAIL)) {
+    //             $emailErr = "email is not proper format";
+    //             $email = "";
+    //         } else {
+    //             $email = test_input($_POST["email"]);
+    //         }
+    //     }
+
+    //     if (empty($_POST["phone"])) {
+    //         $phone = "";
+    //     } else {
+    //         $phone = test_input($_POST["phone"]);
+    //     }
+
+    //     if (empty($_POST["url"])) {
+    //         $url = "";
+    //     } else {
+    //         if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url = $_POST["url"])) {
+    //             $urlErr = "enter valid url";
+    //             $url = "";
+    //         } else {
+    //             $url = test_input($_POST["url"]);
+    //         }
+    //     }
+
+
+    //     if (empty($_POST["gender"])) {
+    //         $genderErr = "this field is required please enter gender";
+    //     } else {
+    //         $gender = test_input($_POST["gender"]);
+    //     }
+
+    //     if (empty($_POST["image"])) {
+    //         $passwordErr = "this field is required please enter image";
+    //     } else {
+    //         $password = test_input($_POST["image"]);
+    //     }
+    // }
+
+    // function test_input($data)
+    // {
+    //     $data = trim($data);
+    //     $data = stripslashes($data);
+    //     $data = htmlspecialchars($data);
+    //     return $data;
+    // }
+
+
+    ?>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand"><b>CRUD</b></a>
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../Welcome.php">Welcome</a>
+        </li>
+      </ul>
+      <!-- <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+      &nbsp;
+      <form class="d-flex">
+                <button id="btn1" class="btn btn-primary rounded-3 "><a href="../../login_signup/logout.php" id="a1">Sign Out</a></button>
+            </form>
+    </div>
+  </div>
+</nav>
     <center>
-        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-            <div class="container-fluid">
-                <a class="navbar-brand"><b>CRUD</b></a>
-                <form class="d-flex">
-                    <button id="btn1" class="btn btn-primary rounded-3 "><a href="../login_signup/logout.php" id="a1">Sign Out</a></button>
-                </form>
-            </div>
-        </nav>
-       
+        <br>
         <div class="mb-3">
             <h3>Create User Form</h3>
         </div>
@@ -50,12 +142,16 @@
 
             <div class="mb-3">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
-                <input id="name" class="form-control" name="name" required class="error">
+                <input id="name" class="form-control" name="name" class="error">
+                <!-- <span class="error">* <?php //echo $nameErr; 
+                                            ?></span> -->
             </div>
 
             <div class="mb-3">
                 <label for="email" class="col-sm-2 col-form-label">E-Mail</label>
-                <input id="email" class="form-control" name="email" type="email" class="error" required>
+                <input id="email" class="form-control" name="email" type="email" class="error">
+                <!-- <span class="error">* <?php //echo $emailErr; 
+                                            ?></span> -->
 
             </div>
 
@@ -77,28 +173,29 @@
                     </div>
                 </div>
                 <label id="gender-error" class="error" for="gender"></label>
-            </div> 
-          <br>
-          <div class="mb-3">
+            </div>
+            <br>
+            <div class="mb-3">
                 <label for="number" class="col-sm-2 col-form-label">Number</label>
-                <input id="number" class="form-control" name="number" type="number"maxlength="10" minlength="10" class="error" required>
-
+                <input id="number" class="form-control" name="number" type="number" maxlength="10" minlength="10" class="error">
+                <!-- <span class="error"><?php //echo $phoneErr; 
+                                            ?></span> -->
             </div>
 
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
                 <div class="col-sm-10 mx-auto">
-                    <input class="form-control" type="file" id="image" name="image" class="error" required>
+                    <input class="form-control" type="file" id="image" name="image" class="error">
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="address" class="form-label">Address</label>
                 <div class="col-sm-10 mx-auto">
-                    <textarea name="address" class="form-control error" id="address" rows="5" cols="2" class="error" required></textarea>
+                    <textarea name="address" class="form-control error" id="address" rows="5" cols="2" class="error"></textarea>
                 </div>
             </div>
-            
+
 
             <div class="mb-3">
                 <center><input class="submit,btn btn-primary rounded-3" id="submit" type="submit" name="submit" value="submit"></center>

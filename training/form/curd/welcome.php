@@ -4,7 +4,7 @@ include('../login_signup/connect.php');
 //session_start();
 $name = $_SESSION['name'];
 $sql = "select * from crud";
-$res=mysqli_query($conn,$sql);
+$res = mysqli_query($conn, $sql);
 
 ?>
 
@@ -17,9 +17,11 @@ $res=mysqli_query($conn,$sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
+    <script src='jquery-3.6.3.js'></script>
+    <script src='jquery.validate.min.js'></script>
+    <!-- <script>
         window.history.forward();
-    </script>
+    </script> -->
     <title>welcome</title>
     <style>
         #a1 {
@@ -31,8 +33,21 @@ $res=mysqli_query($conn,$sql);
             text-decoration: none;
             color: white;
         }
-    </style>
 
+        #msg {
+            color: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#surch").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#mtable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -41,17 +56,33 @@ $res=mysqli_query($conn,$sql);
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
             <div class="container-fluid">
                 <a class="navbar-brand"><b>CRUD</b></a>
+
+
                 <form class="d-flex">
-                    <button id="btn1" class="btn btn-primary rounded-3 "><a href="../create/create.php" id="a1">Sign Out</a></button>&nbsp;
-
-                    <button id="btn1" class="btn btn-primary rounded-3 "><a href="../login_signup/logout.php" id="a1">Sign Out</a></button>
-
+                    <input class=" me-2" id="surch" type="search" placeholder="Search" aria-label="Search" style="border-radius: 5px; ;">
+                    
+                    <div class="dropdown">
+                    <button id="btn1" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="../login_signup/logout.php">Log Out</a></li>
+                        </ul>
+                    </div>
+                    &nbsp;
+                    <button id="btn1" class="btn btn-primary rounded-3 "><a href="create/create.php" id="a1">create user</a></button>
                 </form>
             </div>
         </nav>
+        <p id="msg"><?php
+                    if (isset($_SESSION["msg"])) {
+                        echo $_SESSION["msg"];
+                        unset($_SESSION["msg"]);
+                    }
+
+                    ?></p>
         <br>
         <h1>User List</h1>
-        
+
         <table class="table table-striped table-hover container table table-bordered">
             <thead>
                 <tr>
@@ -62,41 +93,43 @@ $res=mysqli_query($conn,$sql);
                     <th scope="col">Number</th>
                     <th scope="col">Image</th>
                     <th scope="col">Address</th>
-                    <th scope="col" colspan="2"> <center>Action</center></th>
-                    
+                    <th scope="col" colspan="2">
+                        <center>Action</center>
+                    </th>
+
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="mtable">
                 <?php
-                    if(mysqli_num_rows($res) > 0){
+                if (mysqli_num_rows($res) > 0) {
 
-                        while($row = mysqli_fetch_assoc($res)){
-                
-                            echo '<tr>
-                            <td style ="padding-top:27px;">'.$row["id"].'</td>
-                            <td style ="padding-top:27px;">'.$row["name"].'</td>
-                            <td style ="padding-top:27px;">'.$row["email"].'</td>
-                            <td style ="padding-top:27px;">'.$row["gender"].'</td>
-                            <td style ="padding-top:27px;">'.$row["number"].'</td>'?>
-                            <td> <img width="50px" height="50px" src="../image/<?php echo $row['img']; ?>"> </td>
-                            <?php 
-                            echo '<td style ="padding-top:27px;">'.$row["address"].'</td> '?>
+                    while ($row = mysqli_fetch_assoc($res)) {
 
-                           
-                            <td><center><a href="update1.php?id=<?php echo $row["id"]; ?>" id="a1"><button class="btn btn-primary">Update</button> </a>&nbsp;
-                            &nbsp;<a href="delete1.php?id=<?php echo $row["id"]; ?>" id="a1"><button class="btn btn-danger">Delete</button></a></center></td>
-                            <?php
-                           echo" </tr>";
-                            ?>
-                            <?php                
-        }
+                        echo '<tr>
+                            <td style ="padding-top:27px;">' . $row["id"] . '</td>
+                            <td style ="padding-top:27px;">' . $row["name"] . '</td>
+                            <td style ="padding-top:27px;">' . $row["email"] . '</td>
+                            <td style ="padding-top:27px;">' . $row["gender"] . '</td>
+                            <td style ="padding-top:27px;">' . $row["number"] . '</td>' ?>
+                        <td> <img width="50px" height="50px" src="../image/<?php echo $row['img']; ?>"> </td>
+                        <?php
+                        echo '<td style ="padding-top:27px;">' . $row["address"] . '</td> ' ?>
 
-       
-    }else{
-        echo "no record";
-    }
-   
-?>
+
+                        <td>
+                            <center><a href="update1.php?id=<?php echo $row["id"]; ?>" id="a1"><button class="btn btn-primary" id="dbtn">Update</button> </a>&nbsp;
+                                &nbsp;<a href="delete1.php?id=<?php echo $row["id"]; ?>" id="a1"><button class="btn btn-danger">Delete</button></a></center>
+                        </td>
+                        <?php
+                        echo " </tr>";
+                        ?>
+                <?php
+                    }
+                } else {
+                    echo "no record";
+                }
+
+                ?>
             </tbody>
         </table>
         </table>
