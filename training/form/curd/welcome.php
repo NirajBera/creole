@@ -3,8 +3,13 @@ include('../login_signup/session.php');
 include('../login_signup/connect.php');
 //session_start();
 $name = $_SESSION['name'];
-$sql = "select * from crud";
+$email = $_SESSION['email'];
+
+$sql = "select crud.* from crud,user where role !='admin' and crud.email=user.email";
 $res = mysqli_query($conn, $sql);
+$sql1="select role from user where email = '$email'";
+$res1 = mysqli_query($conn, $sql1);
+$row1 = mysqli_fetch_assoc($res1);
 
 ?>
 
@@ -38,6 +43,18 @@ $res = mysqli_query($conn, $sql);
             color: red;
         }
     </style>
+    <?php
+        if($row1['role']=="user"){
+
+    ?>
+        <script>
+            $(document).ready(function(){
+                $(".role").hide();
+            })
+        </script>
+    <?php
+        }
+    ?>
     <script>
         $(document).ready(function() {
             $("#surch").on("keyup", function() {
@@ -47,6 +64,9 @@ $res = mysqli_query($conn, $sql);
                 });
             });
         });
+
+
+
     </script>
 </head>
 
@@ -64,12 +84,12 @@ $res = mysqli_query($conn, $sql);
                     <div class="dropdown">
                     <button id="btn1" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="updateprofile.php">Profile</a></li>
                             <li><a class="dropdown-item" href="../login_signup/logout.php">Log Out</a></li>
                         </ul>
                     </div>
                     &nbsp;
-                    <button id="btn1" class="btn btn-primary rounded-3 "><a href="create/create.php" id="a1">create user</a></button>
+                    <button id="btn1" class="btn btn-primary rounded-3 role "><a href="create/create.php" id="a1">create user</a></button>
                 </form>
             </div>
         </nav>
@@ -93,7 +113,7 @@ $res = mysqli_query($conn, $sql);
                     <th scope="col">Number</th>
                     <th scope="col">Image</th>
                     <th scope="col">Address</th>
-                    <th scope="col" colspan="2">
+                    <th scope="col" colspan="2" class="role">
                         <center>Action</center>
                     </th>
 
@@ -111,12 +131,12 @@ $res = mysqli_query($conn, $sql);
                             <td style ="padding-top:27px;">' . $row["email"] . '</td>
                             <td style ="padding-top:27px;">' . $row["gender"] . '</td>
                             <td style ="padding-top:27px;">' . $row["number"] . '</td>' ?>
-                        <td> <img width="50px" height="50px" src="../image/<?php echo $row['img']; ?>"> </td>
+                        <td> <img width="50px" height="50px" src="../image/<?php echo $row['id']."/".$row['img']; ?>"> </td>
                         <?php
                         echo '<td style ="padding-top:27px;">' . $row["address"] . '</td> ' ?>
 
 
-                        <td>
+                        <td class="role">
                             <center><a href="update1.php?id=<?php echo $row["id"]; ?>" id="a1"><button class="btn btn-primary" id="dbtn">Update</button> </a>&nbsp;
                                 &nbsp;<a href="delete1.php?id=<?php echo $row["id"]; ?>" id="a1"><button class="btn btn-danger">Delete</button></a></center>
                         </td>

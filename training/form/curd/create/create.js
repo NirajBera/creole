@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    $.validator.addMethod("filesize", function(value, element, param) {
+        return this.optional(element) || (element.files[0].size <= param);
+    }, "File size must be less than {0} bytes.");
     $("#vForm").validate({
         rules: {
             email: {
@@ -16,8 +19,12 @@ $(document).ready(function () {
                 required: true
             },
             image:{
-                required: true
+                required: true,
+                extension: "jpe?g|png",
+                filesize:1048576
+                
             }
+
 
 
         },
@@ -40,8 +47,10 @@ $(document).ready(function () {
             gender: {
                 required: "gender is required"
             },
-            image: {
-                required: "image is required"
+               image: {
+                required: "image is required",
+                extension:"Please select only png and jpg files",
+                filesize:"Image size less then 1 MB"
             }
 
 

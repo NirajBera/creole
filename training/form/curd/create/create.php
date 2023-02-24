@@ -10,6 +10,7 @@
     <title></title>
     <script src='jquery-3.6.3.js'></script>
     <script src='jquery.validate.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
     <script src='create.js'></script>
 
 

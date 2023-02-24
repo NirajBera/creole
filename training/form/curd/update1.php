@@ -17,6 +17,7 @@
     <title></title>
     <script src='jquery-3.6.3.js'></script>
     <script src='jquery.validate.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
     <script src='update1.js'></script>
 
 
@@ -95,7 +96,7 @@
             </div>
 
             <div class="mb-3">
-                <p> <img width="50px" height="50px" src="../image/<?php echo $row['img']; ?>"></p> 
+                <p> <img width="50px" height="50px" src="../image/<?php echo $row['id']."/".$row['img']; ?>"></p> 
                 <label for="image" class="form-label">Image</label>
                 <div class="col-sm-10 mx-auto">
                     <input class="form-control" type="file" id="image" name="image" value="<?php echo $row['img'];?> " class="error" required>
