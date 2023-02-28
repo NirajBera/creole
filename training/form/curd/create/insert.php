@@ -4,6 +4,8 @@
         // $data = file_get_contents("php://input");
         // $mydata = json_decode($data,true);
 
+    if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['gender']) && !empty($_POST['number']) && !empty(['address'])){
+
         $name = $_POST['name'];
         $email = $_POST['email'];
         $gender = $_POST['gender'];
@@ -14,8 +16,14 @@
         $base_dir = "../../image/";
         $address = $_POST['address'];
                     
-                          
+        $sql1="select email from user where email = '$email'";
+        $result = mysqli_query($conn, $sql1);
+        $count = mysqli_num_rows($result);                          
 
+        if ($count === 1) {
+           
+            echo "email all ready exits.";
+         } else {
                             $sql = "INSERT INTO crud( name, email, gender, number, img, address) VALUES('$name','$email','$gender','$number','$filename','$address')";
                             if(mysqli_query($conn,$sql)){
 
@@ -40,12 +48,11 @@
                                 
                             }
 
-                           
+                                   
               
                         
+                    }
 
-                   
-            
-
-
-?>
+                }else{
+                    echo "some fild are empty";
+                }

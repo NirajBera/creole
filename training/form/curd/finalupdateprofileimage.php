@@ -18,8 +18,8 @@
                                 $row2 = mysqli_fetch_assoc($res2);
                                 $id = $row2['id'];
                                 $new_dir = $id;
-                                mkdir($base_dir . $new_dir);
-                                $target_file = $base_dir . $new_dir . '/'. $filename ;
+                               // mkdir($base_dir . $new_dir);
+                                $target_file = $base_dir .'/'. $new_dir . '/'. $filename ;
 
 
                                 
@@ -30,7 +30,6 @@
                                 }
                                 
                             }else{
-                                echo "errrottttt";
                                 echo "error : ". mysqli_error($conn);
                                 
                             }

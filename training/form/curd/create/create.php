@@ -38,72 +38,72 @@
 
 
 
-    // $name = $email = $phone = $url = $image = $gender = "";
-    // $nameErr = $emailErr = $phoneErr = $urlErr = $imageErr = $genderErr = "";
+    $name = $email = $phone = $url = $image = $gender = "";
+    $nameErr = $emailErr = $phoneErr = $urlErr = $imageErr = $genderErr = "";
 
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    //     if (empty($_POST["name"])) {
-    //         $nameErr = "this field is required please enter name";
-    //     } else {
+        if (empty($_POST["name"])) {
+            $nameErr = "this field is required please enter name";
+        } else {
 
-    //         if (!preg_match("/^[a-zA-Z-']*$/", $name = $_POST["name"])) {
-    //             $nameErr = "Only letters allowed";
-    //             $name = "";
-    //         } else {
-    //             $name = test_input($_POST["name"]);
-    //         }
-    //     }
+            if (!preg_match("/^[a-zA-Z-']*$/", $name = $_POST["name"])) {
+                $nameErr = "Only letters allowed";
+                $name = "";
+            } else {
+                $name = test_input($_POST["name"]);
+            }
+        }
 
-    //     if (empty($_POST["email"])) {
-    //         $emailErr = "this field is required please enter email";
-    //     } else {
-    //         if (!filter_var($email = $_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    //             $emailErr = "email is not proper format";
-    //             $email = "";
-    //         } else {
-    //             $email = test_input($_POST["email"]);
-    //         }
-    //     }
+        if (empty($_POST["email"])) {
+            $emailErr = "this field is required please enter email";
+        } else {
+            if (!filter_var($email = $_POST["email"], FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "email is not proper format";
+                $email = "";
+            } else {
+                $email = test_input($_POST["email"]);
+            }
+        }
 
-    //     if (empty($_POST["phone"])) {
-    //         $phone = "";
-    //     } else {
-    //         $phone = test_input($_POST["phone"]);
-    //     }
+        if (empty($_POST["phone"])) {
+            $phone = "";
+        } else {
+            $phone = test_input($_POST["phone"]);
+        }
 
-    //     if (empty($_POST["url"])) {
-    //         $url = "";
-    //     } else {
-    //         if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url = $_POST["url"])) {
-    //             $urlErr = "enter valid url";
-    //             $url = "";
-    //         } else {
-    //             $url = test_input($_POST["url"]);
-    //         }
-    //     }
+        if (empty($_POST["url"])) {
+            $url = "";
+        } else {
+            if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url = $_POST["url"])) {
+                $urlErr = "enter valid url";
+                $url = "";
+            } else {
+                $url = test_input($_POST["url"]);
+            }
+        }
 
 
-    //     if (empty($_POST["gender"])) {
-    //         $genderErr = "this field is required please enter gender";
-    //     } else {
-    //         $gender = test_input($_POST["gender"]);
-    //     }
+        if (empty($_POST["gender"])) {
+            $genderErr = "this field is required please enter gender";
+        } else {
+            $gender = test_input($_POST["gender"]);
+        }
 
-    //     if (empty($_POST["image"])) {
-    //         $passwordErr = "this field is required please enter image";
-    //     } else {
-    //         $password = test_input($_POST["image"]);
-    //     }
-    // }
+        if (empty($_POST["image"])) {
+            $passwordErr = "this field is required please enter image";
+        } else {
+            $password = test_input($_POST["image"]);
+        }
+    }
 
-    // function test_input($data)
-    // {
-    //     $data = trim($data);
-    //     $data = stripslashes($data);
-    //     $data = htmlspecialchars($data);
-    //     return $data;
-    // }
+    function test_input($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 
 
     ?>

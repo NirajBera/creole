@@ -9,11 +9,8 @@
     $email = $mydata['email'];
     $password = $mydata['password'];
     $remember=$mydata['remember'];
-
-    if($remember != "none"){
-        setcookie ("email",$email,time()+ 360000,"/");
-        setcookie ("password",$password,time()+ 360000,"/");
-    }
+    $rpassword=$password;
+  
         $_SESSION['email']=$email;
     
         $password=md5($password);
@@ -24,7 +21,13 @@
         $count = mysqli_num_rows($result);
 
         if ($count === 1) {
+            if($remember != "none"){
+                
+                setcookie ("email",$email,time()+ 86400,"/");
+                setcookie ("password",$rpassword,time()+ 86400,"/");
+            }
            $s=1;
+
            echo $s;
         } else {
             echo "Login failed. Invalid username or password.";

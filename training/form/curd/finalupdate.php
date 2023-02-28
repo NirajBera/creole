@@ -3,6 +3,7 @@
 
         // $data = file_get_contents("php://input");
         // $mydata = json_decode($data,true);
+         if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['gender']) && !empty($_POST['number']) && !empty(['address'])){
         $id=$_POST['id'];
         $name = $_POST['name'];
         $email = $_POST['email'];
@@ -11,11 +12,11 @@
         
         $filename = $_FILES['image']["name"];
         $tempname = $_FILES['image']["tmp_name"];
-        $$base_dir = "../image/";
+        $base_dir = "../image/";
         $address = $_POST['address'];
                     
                           
-
+            
                             $sql = "update crud set name='$name', email='$email', gender='$gender', number='$number', img='$filename', address = '$address' where id='$id'";
                             if(mysqli_query($conn,$sql)){
                                 $sql2 = "SELECT id FROM crud WHERE id='$id'";
@@ -23,12 +24,8 @@
                                 $row2 = mysqli_fetch_assoc($res2);
                                 $id = $row2['id'];
                                 $new_dir = $id;
-                                $folder=$base_dir . $new_dir;
-                                if(!is_dir($folder)){
-                                    mkdir($base_dir . $new_dir);
-                                }
-                               
-                                $target_file = $base_dir . $new_dir . '/'. $filename ;
+                                
+                                $target_file = $base_dir .'/'. $new_dir . '/'. $filename ;
 
 
                                 
@@ -37,11 +34,13 @@
                                 } else {
                                     echo "<h3>  Failed to upload image!</h3>";
                                 }
+                                
                             }else{
                                 echo "errrottttt";
                                 echo "error : ". mysqli_error($conn);
                                 
                             }
 
-
-?>
+                        }else{
+                            echo "some fild are empty";
+                        }
